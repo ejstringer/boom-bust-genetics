@@ -1,0 +1,10 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+
+
+#!ALL_syoung_genotypes.rds
+#!pherm_genotypes.rds
+#!ecological_data.csv
+#!em_gridcoortable.csv

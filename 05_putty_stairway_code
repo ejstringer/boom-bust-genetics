@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+# terminal script 
+        # replace file.blueprint with blueprint file name
+        # stairway_plot_es is a folder from https://github.com/xiaoming-liu/stairway-plot-v2
+
+java -cp stairway_plot_es Stairbuilder file.blueprint
+
+bash file.blueprint.sh
