@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+authors:
+- family-names: "Stringer"
+  given-names: "Emily J"
+  orcid: "https://orcid.org/0000-0002-6030-9734"
+- family-names: "Gruber"
+  given-names: "Bernd"
+- family-names: "Sarre"
+  given-names: "Stephen D"
+- family-names: "Wardle"
+  given-names: "Glenda M"
+- family-names: "Edwards"
+  given-names: "Scott V"
+- family-names: "Dickman"
+  given-names: "Christopher R"
+- family-names: "Greenville"
+  given-names: "Aaron C"
+- family-names: "Duncan"
+  given-names: "Richard D"
+
+title: "analysis - Boom-bust population dynamics drive rapid genetic change"
+version: 1.0.0
+doi: 10.5281/zenodo.10100615 
+date-released: 2023-11-10
+url: "https://github.com/ejstringer/boom-bust-genetics"
