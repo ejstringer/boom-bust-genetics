@@ -6,13 +6,11 @@ em.plot_level1 <- function(g_data, model_pred, model = 'Ph_ho_period1_lm'){
   
   dfpred <- model_pred[[model]]
   
-  g_data2 <- g_data[sapply(sapply(g_data, names), 
-                           function(x) filterby[2] %in% x)]
-  
+  g_data2 <- g_data[grep(filterby[2], names(g_data))]
+
   g_data3 <- reduce(g_data2[sapply(g_data2,
                                    function(x) filterby[1] %in% x$species)],
                     bind_rows)
-  
   
   d <- filter(g_data3, sinceEvent == paste('period',
                                            sub('period',"", filterby[3])))
@@ -47,7 +45,7 @@ em.plot_level1 <- function(g_data, model_pred, model = 'Ph_ho_period1_lm'){
   r1 <- ifelse('fst.log' %in% names(d), 2, 2)
   p <- ggplot(dfpred2, aes(x = xVar, y = exp(y)))+
     geom_point(data = d, aes(x = xVar, y = exp(response)),
-                size = 2, alpha = 0.2, width = 0.05)+
+                size = 2, alpha = 0.2)+
     # geom_ribbon(aes(ymin = exp(lower), ymax = exp(upper)), alpha = 0.1)+
     geom_line(data = filter(dfpred2, dfpred2$xVar <= dmax), 
               aes(x = xVar, y = exp(y)), 

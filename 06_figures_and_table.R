@@ -277,6 +277,7 @@ lapply(model_pred, function(x) x$sig[1])
 g_data <- c(pherm_heterozygosity, 
             syoung_heterozygosity, 
             pherm_fst)
+names(g_data) <- names(model_pred)
 plots_level1 <- list()
 
 for(i in 1:length(model_pred)){

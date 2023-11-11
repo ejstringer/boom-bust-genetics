@@ -13,7 +13,7 @@ For neEstimator and stairway analysis it will be necessary to download the assoc
 **There are four data files associated with this analysis.**
 
 -   pherm_genotypes.rds
--   ALL_syoung_genotypes.rds
+-   syoung_genotypes.rds
 -   ecological_data.csv
 -   em_gridcoortable.csv
 
@@ -29,7 +29,17 @@ For neEstimator and stairway analysis it will be necessary to download the assoc
 
 -   Other encoding details: 0 = homozygote, 1 = heterozygote, 2 = homozygote (for alternate allele)
 
-### Details for: pherm_genotypes.rds
+-   Metadata variables:
+
+    -   id: individual identification number
+    -   pop: site location
+    -   lat: latitude
+    -   lon: longitude
+    -   gridId: grid location
+    -   trip: month captured
+    -   species: *Peusdomys hermannsburgensis*
+
+### Details for: syoung_genotypes.rds
 
 -   Description: a rdata file containing the single-nucleotide polymorphism (SNP) genotypes for 677 *Sminthopsis youngsoni* samples and their associated metadata.
 
@@ -41,9 +51,17 @@ For neEstimator and stairway analysis it will be necessary to download the assoc
 
 -   Other encoding details: 0 = homozygote, 1 = heterozygote, 2 = homozygote (for alternate allele)
 
-### Details for: ecological_data.csv
+-   Metadata variables:
 
-"trip","rain","captures","capturesSy","year","sinceEvent","monthsSince","yearsSince"
+    -   id: individual identification number
+    -   pop: site location
+    -   lat: latitude
+    -   lon: longitude
+    -   gridId: grid location
+    -   trip: month captured
+    -   species: *Sminthopsis youngsoni*
+
+### Details for: ecological_data.csv
 
 -   Description: a comma-delimited file containing rainfall and capture data per month. Also included are years since our defined population booms.
 
