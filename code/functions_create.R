@@ -1,43 +1,5 @@
 # create functions -------------------------------------------------------------
 
-em.rain_caps_period <- function(session, boom_dates){
-  
-  meanTripSummary <- session %>% 
-    group_by(trip) %>%
-    summarise(rain = mean(rain),
-              captures = mean(phAbundance, na.rm = T),
-              capturesSy = mean(syAbundance, na.rm = T)) %>%
-    ungroup() %>% 
-    mutate(year = lubridate::year(lubridate::ymd(trip)),
-           trip = ymd(trip)) %>% 
-    bind_rows(data.frame(trip = max(.$trip)+months(1:12)))
-
-  ## period data
-  rain <- meanTripSummary$rain
-  
-  trip <- meanTripSummary$trip 
-  period <- c(1, which(trip %in% boom_dates), length(trip))
-  periodLength <- length(period)
-  
-  periodName <- data.frame(row1 = period[-periodLength], 
-                           row2 = c(period[2:(periodLength-1)]-1, 
-                                    period[periodLength]),
-                           periodName = paste("period", 0:(periodLength-2))) %>% 
-    mutate(months = row2-row1 + 1) %>% 
-    split(seq(nrow(.)))
-  
-  periodSeq <- reduce(lapply(periodName,
-                             function(x) rep(x$periodName,x$months)), c)
-  periodSince <- reduce(lapply(periodName, function(x) 0:(x$months-1)), c)
-  
-  rain_caps <- meanTripSummary %>% 
-    mutate(sinceEvent = periodSeq,
-           monthsSince = periodSince,
-           yearsSince = monthsSince/12)
-  
-  return(rain_caps)
-}
-
 em.distance.grids <- function (dfcoor, between = "gridId", proj = "+proj=longlat", 
                             transform = "+init=epsg:32754") {
   cord.dec = sp::SpatialPoints(cbind(dfcoor$lon, dfcoor$lat), 
@@ -102,7 +64,7 @@ em.ind.ho <- function (gl, boomData)
 
   
   final_het <- heterozygosity_metadata %>% 
-    dplyr::select(species, id, pop, gridId, trip, lat, lon, sex, ho, ho.log) %>%
+    dplyr::select(species, id, pop, gridId, trip, lat, lon, ho, ho.log) %>%
     mutate(trip = ymd(trip),
            species =   gsub('\\b(\\pL)\\pL{4,}|.','\\1', 
                             species,perl = TRUE)) %>% 

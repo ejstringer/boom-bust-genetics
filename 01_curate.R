@@ -6,7 +6,7 @@ source('./code/functions_neEstimate.R') # prep for linux analysis
 # load --------------------------------------------------------------------
 
 ph <- readRDS("./data/pherm_genotypes.rds")        # DArT genotype data
-sy <- readRDS("./data/ALL_syoung_genotypes.rds")   # DArT genotype data
+sy <- readRDS("./data/syoung_genotypes.rds")   # DArT genotype data
 rain_caps <- read.csv("./data/ecological_data.csv")  # rainfall and captures
 grids <- read.csv("./data/em_gridcoortable.csv")   # grid coordinates
 
