@@ -39,7 +39,7 @@ prepNePh <- em.genlight.ne.prep(pherm, spp = 'ph')
 prepNeSy <- em.genlight.ne.prep(syoung, spp = 'sy')
 
 saveRDS(prepNePh, './data_processed/pherm_ne_prep.rds')   # for neEstimator analysis
-saveRDS(prepNePh, './data_processed/syoung_ne_prep.rds')  # for neEstimator analysis
+saveRDS(prepNeSy, './data_processed/syoung_ne_prep.rds')  # for neEstimator analysis
 saveRDS(rain_caps, './data_processed/rain_captures.rds') # for neEstimator analysis
  
 
