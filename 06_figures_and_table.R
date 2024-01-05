@@ -6,6 +6,7 @@
 source('./code/functions_tables.R')
 source('./code/functions_plotting.R')
 source('./code/functions_conceptual.R')
+source('./code/functions_models.R')
 
 # load --------------------------------------------------------------------
 
@@ -235,7 +236,7 @@ nemodelgg<- ggplot(necaps2, aes(x = captures, y = (ne), group = species2))+
                      labels = scales::number_format(accuracy= 1))+
   scale_x_continuous(trans = "log",
                      labels = scales::number_format(accuracy= 0.1))+
-  ylab(expression("N"[e]*" Estimates "[` log-scale`]))+
+  ylab(expression(italic("N")[e]~" Estimates "[` log-scale`]))+
   scale_linetype(guide="none") +
   scale_size(guide="none") +
   facet_wrap(~species2, ncol = 2) +
@@ -494,7 +495,7 @@ lay <- rbind(c(rep(1,w), 4,4),
 mylegend<-g_legend(hist.ph)
 
 
-left <- grid::textGrob(expression("Historical N"[e]*" Estimates"[` log-scale`]),
+left <- grid::textGrob(expression("Historical "*italic('N')[e]*" Estimates"[` log-scale`]),
                        gp = grid::gpar(fontsize = 12), rot = 90)
 
 tiff("./figures/figure4_historicalNe.tiff", units="cm", width=18,

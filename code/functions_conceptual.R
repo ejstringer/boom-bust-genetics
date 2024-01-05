@@ -69,7 +69,7 @@ g1 <- ggplot(filter(rain_caps, trip > ymd("2006-01-01")), aes(ymd(trip), capture
     axis.ticks.x = element_blank(),
     legend.position = "none",
     axis.title.x = element_blank(),
-    axis.text.y = element_text(vjust = 0.3,
+    axis.text.y = element_text(vjust = 0.6,
                                margin = margin(l = 15, r = -17)),
     plot.margin = margin(0.01, 0.01, 0.01, 0.01, "cm")) +
   scale_x_date(date_breaks = "years" , date_labels = "%Y") +
@@ -204,7 +204,7 @@ cap_plot <- grid.arrange(grobs = list(g1+ labs(tag = 'C')+
                          left = left, layout_matrix = lay)
 
 left2 <- grid::textGrob('Rainfall (mm)',
-                       gp = grid::gpar(fontsize = 12), rot = 90)
+                       gp = grid::gpar(fontsize = 11), rot = 90)
 rain_plot <- grid.arrange(grobs = list(g3+labs(tag = "B")+
                                          theme(plot.tag = element_text(size = fsize),
                                                axis.title.y = element_blank())),

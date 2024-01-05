@@ -94,14 +94,12 @@ em.plot_level2 <- function(plots_level1, xticks = FALSE,
       theme(axis.text.y = element_blank())
     
    
-
-    ytitle <-grid::textGrob(expression(paste("Individual  ",
-                                             H[` log-scale`])),
+    ytitle <-grid::textGrob(expression("Individual "~italic(H)[` log-scale`]),
                             rot = 90,
                             gp = grid::gpar(fontsize = 12))   
     
     if(ylabFst){
-      ytitle <- grid::textGrob(expression(paste(F[`ST  log-scale`])),
+      ytitle <- grid::textGrob(expression(italic(F)[`ST  log-scale`]),
                                rot = 90,
                                gp = grid::gpar(fontsize = 12))
     }
